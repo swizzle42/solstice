@@ -5,7 +5,7 @@ A custom atomic OS image built on [Universal Blue](https://universal-blue.org/)'
 ## What's in it
 
 - **Base:** `ghcr.io/ublue-os/aurora-dx-nvidia-open`
-- **Packages:** `micro`
+- **Packages:** None at the moment
 - **System Flatpaks:** Firefox, Bitwarden, Spotify, Obsidian
 - Signed with [cosign](https://github.com/sigstore/cosign) via BlueBuild's `signing` module
 
