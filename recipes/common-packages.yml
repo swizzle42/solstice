@@ -1,0 +1,8 @@
+modules:
+  - type: dnf
+    install:
+      skip-unavailable: true
+      skip-broken: true
+      packages:
+        # System Utilities & CLI Enhancement
+        - kitty
