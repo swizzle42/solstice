@@ -22,6 +22,10 @@ modules:
       packages:
         - micro
         - kitty
+    remove:
+      packages:
+        - firefox
+      auto-remove: true
 
   - type: default-flatpaks
     configurations:
