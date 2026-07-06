@@ -28,6 +28,14 @@ modules:
         - dms
         - dsearch
         - xwayland-satellite
+        # nix
+        - nix
+        - nix-config
+        - nix-daemon
+
+  - type: script
+    snippets:
+      "systemctl enable nix-daemon"
 
   - type: default-flatpaks
     configurations:
