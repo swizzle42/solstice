@@ -17,6 +17,16 @@ modules:
       - source: system
         destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
 
+  - type: dnf
+    repos:
+      copr:
+        - avengemedia/dms
+    install:
+      packages:
+        - niri
+        - dms
+        - xwayland-satellite
+
   - type: default-flatpaks
     configurations:
       - notify: true # Send notification after install/uninstall is finished (true/false)
@@ -28,5 +38,10 @@ modules:
           - com.spotify.Client
           - md.obsidian.Obsidian
       - scope: user # Also add Flathub user repo, but no user packages
+
+  - type: systemd
+    user:
+      enabled:
+        - dms.service
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
