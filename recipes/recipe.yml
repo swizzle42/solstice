@@ -28,13 +28,6 @@ modules:
         - dms
         - dsearch
         - xwayland-satellite
-        # nix
-        - nix
-        - nix-daemon
-
-  - type: script
-    scripts:
-      - nix.sh
 
   - type: default-flatpaks
     configurations:
