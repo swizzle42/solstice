@@ -30,7 +30,6 @@ modules:
         - xwayland-satellite
         # nix
         - nix
-        - nix-config
         - nix-daemon
 
   - type: script
