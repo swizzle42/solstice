@@ -35,7 +35,7 @@ modules:
 
   - type: script
     snippets:
-      "systemctl enable nix-daemon"
+      - "systemctl enable nix-daemon"
 
   - type: default-flatpaks
     configurations:
