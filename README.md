@@ -9,6 +9,10 @@ A custom atomic OS image built on [Universal Blue](https://universal-blue.org/)'
 - **System Flatpaks:** Firefox, Bitwarden, Spotify, Obsidian
 - Signed with [cosign](https://github.com/sigstore/cosign) via BlueBuild's `signing` module
 
+### Notes:
+
+This image ships with dms and niri. To maintain compatibility with Plasma, the dms systemd service isn't used. Instead, dms is started with niri in niri's configuration files. For more information, see the [dms docs](https://danklinux.com/docs/dankmaterialshell/compositors#niri-configuration).
+
 ## Installation
 
 ### Rebasing from an existing atomic Fedora system
