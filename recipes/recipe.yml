@@ -28,6 +28,7 @@ modules:
         - dms
         - dsearch
         - xwayland-satellite
+        - ulauncher
 
   - type: default-flatpaks
     configurations:
