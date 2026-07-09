@@ -11,7 +11,7 @@ A custom atomic OS image built on [Universal Blue](https://universal-blue.org/)'
 
 ### Notes:
 
-This image ships with dms and niri. To maintain compatibility with Plasma, the dms systemd service isn't used. Instead, dms is started with niri in niri's configuration files. For more information, see the [dms docs](https://danklinux.com/docs/dankmaterialshell/compositors#niri-configuration).
+This image ships with dms and niri. To maintain compatibility with Plasma, the default dms systemd service isn't used. Instead, the dms systemd service is linked with the niri service to ensure better compatability with the KDE session. For more information, see the [dms docs](https://danklinux.com/docs/dankmaterialshell/compositors#niri-configuration)
 
 ## Installation
 
