@@ -5,13 +5,8 @@ A custom atomic OS image built on [Universal Blue](https://universal-blue.org/)'
 ## What's in it
 
 - **Base:** `ghcr.io/ublue-os/aurora-dx-nvidia-open`
-- **Packages:** `niri`, `dms`, `xwayland-satellite`
 - **System Flatpaks:** Firefox, Bitwarden, Spotify, Obsidian
 - Signed with [cosign](https://github.com/sigstore/cosign) via BlueBuild's `signing` module
-
-### Notes:
-
-This image ships with dms and niri. To maintain compatibility with Plasma, the default dms systemd service isn't used. Instead, the dms systemd service is linked with the niri service to ensure better compatability with the KDE session. For more information, see the [dms docs](https://danklinux.com/docs/dankmaterialshell/compositors#niri-configuration)
 
 ## Installation
 
@@ -26,14 +21,14 @@ sudo bootc switch --transport registry ghcr.io/swizzle42/solstice:latest
 Reboot, then switch to the signed image so future updates are verified:
  
 ```bash
-sudo bootc switch ghcr.io/swizzle42/solstice:latest
+sudo bootc switch --enforce-container-sigpolicy ghcr.io/swizzle42/solstice:latest
 ```
  
 *(If you're on an older `rpm-ostree`-based system instead of `bootc`, use `rpm-ostree rebase ostree-unverified-registry:ghcr.io/swizzle42/solstice:latest` for the first step, then `rpm-ostree rebase ostree-image-signed:docker://ghcr.io/swizzle42/solstice:latest` for the second.)*
 
 ### Fresh install
  
-Download the ISO from the [Releases](../../releases) page (if published) or build one yourself using the [BlueBuild ISO instructions](https://blue-build.org/how-to/installation/).
+Build an ISO yourself using the [BlueBuild ISO instructions](https://blue-build.org/how-to/generate-iso/).
 
 ## Updates
  
@@ -49,7 +44,7 @@ sudo bootc upgrade
 bluebuild build ./recipes/recipe.yml
 ```
 
-The `latest` tag will automatically point to the latest build. That build will still always use the Fedora version specified in `recipe.yml`, so you won't get accidentally updated to the next major version.
+The `latest` tag will automatically point to the latest build. `recipe.yml` sets `image-version: latest`, so the image follows the base image onto new Fedora major versions automatically. Pin `image-version` to a specific version to stay on one Fedora release.
 
 ## Verification
 
