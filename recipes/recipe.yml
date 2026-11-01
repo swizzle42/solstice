@@ -17,18 +17,6 @@ modules:
       - source: system
         destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
 
-  - type: dnf
-    repos:
-      copr:
-        - avengemedia/dms
-        - avengemedia/danklinux
-    install:
-      packages:
-        - niri
-        - dms
-        - dsearch
-        - xwayland-satellite
-
   - type: default-flatpaks
     configurations:
       - notify: true # Send notification after install/uninstall is finished (true/false)
